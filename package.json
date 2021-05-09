@@ -1,0 +1,37 @@
+{
+  "name": "medicio",
+  "title": "Medicio",
+  "version": "4.1.0",
+  "description": "Medicio - Bootstrap Website Template",
+  "author": "BootstrapMade.com",
+  "homepage": "https://bootstrapmade.com/medicio-free-bootstrap-theme/",
+  "license": "https://bootstrapmade.com/license/",
+  "main": "gulpfile.js",
+  "scripts": {
+    "start": "node_modules/.bin/gulp start",
+    "watch": "node_modules/.bin/gulp watch",
+    "dist": "node_modules/.bin/gulp"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.3",
+    "@srexi/purecounterjs": "^1.1.1",
+    "animate.css": "^4.1.1",
+    "aos": "^2.3.4",
+    "bootstrap": "^5.0.0-beta3",
+    "bootstrap-icons": "^1.4.0",
+    "boxicons": "^2.0.7",
+    "glightbox": "^3.0.7",
+    "swiper": "^6.5.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.14",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-beautify": "^3.0.0",
+    "gulp-inject-string": "^1.1.2",
+    "gulp-nunjucks": "^5.1.0",
+    "gulp-sass": "^4.1.0",
+    "merge-stream": "^2.0.0"
+  }
+}

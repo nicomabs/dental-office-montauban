@@ -1,0 +1,80 @@
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+// Hero container
+.hero {
+  position: relative;
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('/src/assets/img/new/hero_banner.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  z-index: 0;
+  overflow: hidden;
+}
+
+// Video
+.hero__video {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.header-overlay {
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 1;
+  opacity: 0.85;
+}
+
+.intro-title {
+  display: grid;
+  place-items: center;
+  position: relative;
+  top: 50vh;
+
+  .title {
+    color: #fff;
+    font-size: 4rem;
+    text-decoration: none;
+  }
+
+  .text {
+    color: #fff;
+    font-size: 1.2rem;
+    text-decoration: none;
+  }
+
+  .btn {
+    background: #34b3a0;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    text-decoration: none;
+  }
+}
+
+// Hide or show custom poster background on mobile devices with media queries
+@media only screen and (max-width: 480px) {
+  // mobile styles go here
+}
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  // tablet styles go here
+}
+
+@media only screen and (min-width: 769px) {
+  // desktop styles go here
+  .hero {
+    // Remove background image
+    background-image: unset;
+  }
+  .hero__video {
+    // Show video
+    display: block;
+  }
+}
