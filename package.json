@@ -10,7 +10,8 @@
   "scripts": {
     "start": "node_modules/.bin/gulp start",
     "watch": "node_modules/.bin/gulp watch",
-    "dist": "node_modules/.bin/gulp"
+    "dist": "node_modules/.bin/gulp",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.3",
