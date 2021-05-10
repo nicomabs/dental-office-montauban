@@ -4,12 +4,10 @@
 // Hero container
 .hero {
   position: relative;
-  display: block;
   width: 100vw;
   height: 100vh;
   background-image: url('/src/assets/img/new/hero_banner.jpg');
   background-repeat: no-repeat;
-  background-position: center center;
   background-size: cover;
   z-index: 0;
   overflow: hidden;
@@ -43,12 +41,51 @@
     text-decoration: none;
   }
 
-  .btn {
-    background: #34b3a0;
-    color: #fff;
-    font-size: 1.2rem;
-    padding: 1rem 2rem;
-    text-decoration: none;
+  .scroll-down {
+    height: 50px;
+    width: 30px;
+    border: 2px solid $secondary;
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    border-radius: 50px;
+    cursor: pointer;
+  }
+  .scroll-down::before,
+  .scroll-down::after {
+    content: '';
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    height: 10px;
+    width: 10px;
+    transform: translate(-50%, -100%) rotate(45deg);
+    border: 2px solid $secondary;
+    border-top: transparent;
+    border-left: transparent;
+    animation: scroll-down 1s ease-in-out infinite;
+  }
+  .scroll-down::before {
+    top: 50%;
+    animation-delay: 0.3s;
+    /* animation: scroll-down 1s ease-in-out infinite; */
+  }
+
+  @keyframes scroll-down {
+    0% {
+      /* top:20%; */
+      opacity: 0;
+    }
+    30% {
+      opacity: 1;
+    }
+    60% {
+      opacity: 1;
+    }
+    100% {
+      top: 90%;
+      opacity: 0;
+    }
   }
 }
 
