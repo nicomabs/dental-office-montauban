@@ -24,26 +24,32 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 0 10px 30px;
+    padding: 10px 15px 10px 15px;
+    margin: 0 10px 0 10px;
     font-family: $font-primary;
-    font-size: 13px;
+    font-size: 18px;
     color: lighten($secondary, 5);
     white-space: nowrap;
     transition: 0.3s;
     text-transform: uppercase;
     font-weight: 500;
-
-    i {
-      font-size: 12px;
-      line-height: 0;
-      margin-left: 5px;
-    }
   }
 
-  a:hover,
-  .active,
-  li:hover > a {
-    color: $primary;
+  a:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: '';
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: lighten($secondary, 5);
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+  }
+  a:hover:after {
+    width: 100%;
+    left: 0;
   }
 
   .dropdown {

@@ -12,47 +12,12 @@ $animate: all 0.2s ease-in-out;
     padding: 15px 0;
   }
 
+  .logo {
+    margin-right: 60px;
+  }
+
   &.header-scrolled {
     top: 0;
     background: #5a725c;
-  }
-
-  a > .nav-link {
-    text-decoration: none;
-
-    a > .nav-link:hover {
-      font-size: 36px;
-      text-decoration: underline;
-      text-align: center;
-      margin: 0 auto;
-      padding: 0;
-      transition: $animate;
-      position: relative;
-      &:before,
-      &:after {
-        content: '';
-        position: absolute;
-        bottom: -10px;
-        width: 0px;
-        height: 5px;
-        margin: 5px 0 0;
-        transition: $animate;
-        transition-duration: 0.75s;
-        opacity: 0;
-        background-color: darken(orange, 5%);
-      }
-      &.hover-3 {
-        &:before {
-          left: 50%;
-        }
-        &:after {
-          right: 50%;
-        }
-      }
-    }
-  }
-
-  img {
-    max-height: 40px;
   }
 }
