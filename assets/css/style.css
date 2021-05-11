@@ -2,7 +2,7 @@
 # General
 --------------------------------------------------------------*/
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Raleway", sans-serif;
   color: #173444;
   margin: 0;
   padding: 0;
@@ -172,48 +172,13 @@ h6 {
   }
 }
 
+#header .logo {
+  margin-right: 60px;
+}
+
 #header.header-scrolled {
   top: 0;
   background: #5a725c;
-}
-
-#header a > .nav-link {
-  text-decoration: none;
-}
-
-#header a > .nav-link a > .nav-link:hover {
-  font-size: 36px;
-  text-decoration: underline;
-  text-align: center;
-  margin: 0 auto;
-  padding: 0;
-  transition: all 0.2s ease-in-out;
-  position: relative;
-}
-
-#header a > .nav-link a > .nav-link:hover:before, #header a > .nav-link a > .nav-link:hover:after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  width: 0px;
-  height: 5px;
-  margin: 5px 0 0;
-  transition: all 0.2s ease-in-out;
-  transition-duration: 0.75s;
-  opacity: 0;
-  background-color: #e69500;
-}
-
-#header a > .nav-link a > .nav-link:hover.hover-3:before {
-  left: 50%;
-}
-
-#header a > .nav-link a > .nav-link:hover.hover-3:after {
-  right: 50%;
-}
-
-#header img {
-  max-height: 40px;
 }
 
 /*--------------------------------------------------------------
@@ -242,9 +207,10 @@ h6 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 0 10px 30px;
+  padding: 10px 15px 10px 15px;
+  margin: 0 10px 0 10px;
   font-family: "Roboto", sans-serif;
-  font-size: 13px;
+  font-size: 18px;
   color: #c6b67e;
   white-space: nowrap;
   transition: 0.3s;
@@ -252,16 +218,22 @@ h6 {
   font-weight: 500;
 }
 
-.navbar a i {
-  font-size: 12px;
-  line-height: 0;
-  margin-left: 5px;
+.navbar a:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: '';
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #c6b67e;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
 }
 
-.navbar a:hover,
-.navbar .active,
-.navbar li:hover > a {
-  color: #5a725c;
+.navbar a:hover:after {
+  width: 100%;
+  left: 0;
 }
 
 .navbar .dropdown ul {
@@ -444,6 +416,11 @@ h6 {
   overflow: hidden;
 }
 
+.hero__video {
+  width: 100%;
+  aspect-ratio: 16/9;
+}
+
 .header-overlay {
   height: 100vh;
   position: absolute;
@@ -556,6 +533,7 @@ h6 {
 section {
   padding: 60px 0;
   overflow: hidden;
+  width: 100vw;
 }
 
 .section-bg {
