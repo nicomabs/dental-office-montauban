@@ -13,6 +13,11 @@
   overflow: hidden;
 }
 
+.hero__video {
+  width: 100%;
+  aspect-ratio: 16/9;
+}
+
 .header-overlay {
   height: 100vh;
   position: absolute;
