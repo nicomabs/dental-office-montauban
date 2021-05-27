@@ -1,6 +1,14 @@
 (function() {
   "use strict";
 
+  anime({
+    targets: 'div',
+    translateX: 250,
+    rotate: '1turn',
+    backgroundColor: '#FFF',
+    duration: 800
+  });
+
   /**
    * Easy selector helper function
    */
@@ -161,6 +169,17 @@
   let preloader = select('#preloader-box');
   if (preloader) {
     window.addEventListener('load', () => {
+      var lineDrawing = anime({
+        targets: '#preloader-box .lines path',
+        strokeDashoffset: [anime.setDashoffset, 0],
+        easing: 'easeInOutSine',
+        duration: 3000,
+        delay: function(el, i) {
+          return i * 250
+        },
+        direction: 'alternate',
+        loop: false
+      });
       preloader.remove()
     });
   }
