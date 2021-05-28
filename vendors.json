@@ -4,6 +4,10 @@
     "dest": "assets/vendor/animate.css/",
     "css_link": "assets/vendor/animate.css/animate.min.css"
   },
+  "animejs": {
+    "src": "./node_modules/animejs/lib/*.js",
+    "dest": "assets/vendor/animejs/"
+  },
   "aos": {
     "src": "./node_modules/aos/dist/**/*",
     "dest": "assets/vendor/aos/",

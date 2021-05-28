@@ -158,7 +158,18 @@
   let preloader = select('#preloader-box');
   if (preloader) {
     window.addEventListener('load', () => {
-      preloader.remove()
+      var lineDrawing = anime({
+        targets: '#preloader-box .lines path',
+        strokeDashoffset: [anime.setDashoffset, 0],
+        easing: 'linear',
+        duration: 2300,
+        delay: function (el, i) { return i * 250 },
+        direction: 'alternate',
+        loop: false
+      });
+      setTimeout(() => {
+        preloader.remove()
+      }, 5000);
     });
   }
 

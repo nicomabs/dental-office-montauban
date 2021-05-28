@@ -28,16 +28,8 @@
   </head>
 
   <body>
-    {% include('parts/header.html') %} {% block main %}{% endblock %} {% include
-    "parts/footer.html" %}
-
-    <div id="preloader-box">
-      <object
-        data="/src/assets/img/LOGOS/WHITE_LOGO/g10.svg"
-        width="300"
-        height="300"
-      ></object>
-    </div>
+    {% include('parts/header.html') %} {% include('parts/preloader.html') %} {%
+    block main %}{% endblock %} {% include "parts/footer.html" %}
     <a
       href="#"
       class="back-to-top d-flex align-items-center justify-content-center"
@@ -47,7 +39,7 @@
     <!-- Vendor JS Files -->
 
     <!-- Template Main JS File -->
+    <script src="assets/vendor/animejs/anime.min.js"></script>
     <script src="assets/js/main.js"></script>
-    <script src="anime.min.js"></script>
   </body>
 </html>
