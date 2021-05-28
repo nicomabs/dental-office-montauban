@@ -1,14 +1,6 @@
 (function() {
   "use strict";
 
-  anime({
-    targets: 'div',
-    translateX: 250,
-    rotate: '1turn',
-    backgroundColor: '#FFF',
-    duration: 800
-  });
-
   /**
    * Easy selector helper function
    */
@@ -172,15 +164,17 @@
       var lineDrawing = anime({
         targets: '#preloader-box .lines path',
         strokeDashoffset: [anime.setDashoffset, 0],
-        easing: 'easeInOutSine',
-        duration: 3000,
+        easing: 'linear',
+        duration: 2300,
         delay: function(el, i) {
           return i * 250
         },
         direction: 'alternate',
         loop: false
       });
-      preloader.remove()
+      setTimeout(() => {
+        preloader.remove()
+      }, 5000);
     });
   }
 
