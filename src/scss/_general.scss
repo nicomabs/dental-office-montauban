@@ -40,11 +40,14 @@ h6 {
   overflow: hidden;
   background: $primary;
 
-  svg {
-    position: relative;
+  .svg-box {
+    margin: 2em;
     display: block;
-    margin: auto;
-    top: 25%;
+    position: relative;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
   }
 }
 
