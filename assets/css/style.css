@@ -41,11 +41,12 @@ h6 {
   background: #5a725c;
 }
 
-#preloader-box svg {
-  position: relative;
+#preloader-box .svg-box {
+  margin: 2em;
   display: block;
-  margin: auto;
-  top: 25%;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 /*--------------------------------------------------------------
