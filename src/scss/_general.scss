@@ -40,56 +40,11 @@ h6 {
   overflow: hidden;
   background: $primary;
 
-  .path {
-    stroke-dasharray: 1000;
-    stroke-dashoffset: 1000;
-    animation: dash 4s linear alternate;
-  }
-
-  @keyframes dash {
-    from {
-      stroke-dashoffset: 822;
-    }
-    to {
-      stroke-dashoffset: 0;
-      stroke-dasharray: 2000;
-    }
-  }
-
-  .preload {
-    transition: all 1s ease;
-  }
-
-  .preload-finish {
-    visibility: hidden;
-    opacity: 0;
-  }
-
-  .preload-finish > path {
-    visibility: hidden;
-    opacity: 0;
-  }
-}
-
-#preloader-box:before {
-  content: '';
-  position: fixed;
-  top: calc(50% - 30px);
-  left: calc(50% - 30px);
-  border: 6px solid $primary;
-  border-top-color: lighten($primary, 45);
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  animation: animate-preloader 6s linear infinite;
-}
-
-@keyframes animate-preloader {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
+  svg {
+    position: relative;
+    display: block;
+    margin: auto;
+    top: 25%;
   }
 }
 
