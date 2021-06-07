@@ -42,8 +42,10 @@ h6 {
 }
 
 #preloader-box svg {
+  position: relative;
   display: block;
-  margin: 15px auto;
+  margin: auto;
+  top: 25%;
 }
 
 /*--------------------------------------------------------------
@@ -360,35 +362,30 @@ h6 {
 }
 
 .header-overlay {
-  height: 100vh;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  z-index: 1;
-  opacity: 0.85;
+  /*   text-align: center; */
+  padding: 0 1.5rem;
 }
 
-.intro-title {
-  display: grid;
-  place-items: center;
-  position: relative;
-  top: 86vh;
+.header-overlay h2 {
+  margin: 0;
+  color: #fff;
+  font-weight: 400;
+  font-size: 1.2rem;
 }
 
-.intro-title .scroll-down {
+.header-overlay .scroll-down {
   height: 50px;
   width: 30px;
   border: 4px solid #beac6c;
   position: absolute;
   left: 50%;
-  bottom: 20px;
+  bottom: 30px;
   border-radius: 50px;
   cursor: pointer;
 }
 
-.intro-title .scroll-down::before,
-.intro-title .scroll-down::after {
+.header-overlay .scroll-down::before,
+.header-overlay .scroll-down::after {
   content: '';
   position: absolute;
   top: 20%;
@@ -403,7 +400,7 @@ h6 {
   animation: scroll-down 1s ease-in-out infinite;
 }
 
-.intro-title .scroll-down::before {
+.header-overlay .scroll-down::before {
   top: 50%;
   -webkit-animation-delay: 0.3s;
   animation-delay: 0.3s;
@@ -441,6 +438,12 @@ h6 {
   100% {
     top: 90%;
     opacity: 0;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .header-overlay {
+    height: 30px;
   }
 }
 
@@ -558,44 +561,80 @@ section {
 /*--------------------------------------------------------------
 # Featured Services
 --------------------------------------------------------------*/
-.featured-services .icon-box {
-  padding: 30px;
+.featured-services .timeline {
+  margin: 50px 0;
+  list-style-type: none;
+  display: flex;
+  padding: 0;
+  text-align: center;
+}
+
+.featured-services .timeline li {
+  transition: all 200ms ease-in;
+}
+
+.featured-services .timestamp {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 0px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: 100;
+}
+
+.featured-services .status {
+  padding: 0px 40px;
+  display: flex;
+  justify-content: center;
+  border-top: 4px solid #beac6c;
   position: relative;
-  overflow: hidden;
-  background: #fff;
-  box-shadow: 0 0 29px 0 rgba(68, 88, 144, 0.12);
-  transition: all 0.3s ease-in-out;
-  border-radius: 8px;
-  z-index: 1;
+  transition: all 200ms ease-in;
 }
 
-.featured-services .icon-box::before {
+.featured-services .status span {
+  font-weight: 600;
+  padding-top: 20px;
+}
+
+.featured-services .status span:before {
   content: '';
+  width: 25px;
+  height: 25px;
+  background-color: #fff;
+  border-radius: 25px;
+  border: 4px solid #beac6c;
   position: absolute;
-  background: #c6d2c7;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  top: 100%;
-  transition: all 0.3s;
-  z-index: -1;
+  top: -15px;
+  left: calc(50% - 12px);
+  transition: all 200ms ease-in;
 }
 
-.featured-services .icon-box:hover::before {
-  background: #5a725c;
-  top: 0;
-  border-radius: 0px;
+.featured-services .swiper-control {
+  text-align: right;
 }
 
-.featured-services .icon {
-  margin-bottom: 15px;
+.featured-services .swiper-container {
+  width: 100%;
+  height: 250px;
+  margin: 50px 0;
+  overflow: hidden;
+  padding: 0 20px 30px 20px;
 }
 
-.featured-services .icon i {
-  font-size: 48px;
-  line-height: 1;
-  color: #5a725c;
-  transition: all 0.3s ease-in-out;
+.featured-services .swiper-slide {
+  width: 200px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.featured-services .swiper-slide:nth-child(2n) {
+  width: 40%;
+}
+
+.featured-services .swiper-slide:nth-child(3n) {
+  width: 20%;
 }
 
 .featured-services .title {
@@ -612,15 +651,6 @@ section {
   font-size: 15px;
   line-height: 28px;
   margin-bottom: 0;
-}
-
-.featured-services .icon-box:hover .title a,
-.featured-services .icon-box:hover .description {
-  color: #fff;
-}
-
-.featured-services .icon-box:hover .icon i {
-  color: #fff;
 }
 
 /*--------------------------------------------------------------
@@ -980,6 +1010,10 @@ section {
 /*--------------------------------------------------------------
 # Departments
 --------------------------------------------------------------*/
+.departments {
+  background: rgba(90, 114, 92, 0.1);
+}
+
 .departments .nav-tabs {
   border: 0;
 }
