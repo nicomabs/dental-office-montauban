@@ -24,16 +24,58 @@
   top: 0;
   left: 0;
   width: 100vw;
-  z-index: 1;
-  opacity: 0.85;
+  z-index: 600;
+  -webkit-filter: sepia(30%);
+  filter: sepia(30%);
+
+  &::before {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    pointer-events: none;
+    mix-blend-mode: color-burn;
+    background: -webkit-radial-gradient(
+      50% 50%,
+      circle closest-corner,
+      rgba(224, 231, 230, 1) 40,
+      rgba(43, 42, 161, 0.6)
+    );
+    background: radial-gradient(
+      50% 50%,
+      circle closest-corner,
+      rgba(224, 231, 230, 1) 40,
+      rgba(43, 42, 161, 0.6)
+    );
+  }
 
   .intro-title {
+    display: block;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    opacity: 0.99;
+    text-align: center;
+
+    .intro-fade-in {
+      color: $secondary;
+      font-weight: 600;
+      font-size: 3em;
+      line-height: 1.8em;
+    }
+  }
+
+  .scroll-down-wrapper {
     display: grid;
     place-items: center;
     position: relative;
-    top: 86vh;
 
     .scroll-down {
+      top: 86vh;
       height: 50px;
       width: 30px;
       border: 4px solid $secondary;
