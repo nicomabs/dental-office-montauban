@@ -4,8 +4,8 @@
 // Hero container
 .hero {
   position: relative;
-  width: 100vw;
-  height: 100vh;
+  max-width: 100vw;
+  max-height: 100vh;
   background-image: url('/src/assets/img/new/photos/salle_operation.jpg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -19,11 +19,11 @@
 }
 
 .header-overlay {
-  height: 100vh;
+  max-width: 100vw;
+  max-height: 100vh;
   position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
   z-index: 600;
   -webkit-filter: sepia(30%);
   filter: sepia(30%);
@@ -134,7 +134,7 @@
     display: none;
   }
 
-  .hero-video {
+  .hero__video {
     display: none;
   }
 }
@@ -143,6 +143,11 @@
   // tablet styles go here
   .hero {
     height: fit-content;
+  }
+
+  .hero__video {
+    width: 100%;
+    height: 100%;
   }
 
   .header-overlay {
