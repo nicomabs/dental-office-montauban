@@ -36,6 +36,10 @@ section {
   p {
     margin-bottom: 0;
   }
+  h5 {
+    margin-bottom: 0;
+    color: rgba($primary);
+  }
 }
 
 /*--------------------------------------------------------------
@@ -246,7 +250,12 @@ section {
 --------------------------------------------------------------*/
 .about {
   .content {
+    padding-top: 1em;
+
     h3 {
+      display: flex;
+      justify-content: center;
+      text-align: center;
       font-weight: 600;
       font-size: 26px;
     }
@@ -262,6 +271,9 @@ section {
         padding-right: 4px;
         color: $primary;
       }
+    }
+    p {
+      margin: 3em 0;
     }
     p:last-child {
       margin-bottom: 0;
