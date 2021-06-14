@@ -159,7 +159,7 @@
   if (preloader) {
     window.addEventListener('load', () => {
       var lineDrawing = anime({
-        targets: '#preloader-box .lines path',
+        targets: '#preloader-box path',
         strokeDashoffset: [anime.setDashoffset, 0],
         easing: 'linear',
         duration: 2300,
