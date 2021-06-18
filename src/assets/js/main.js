@@ -162,14 +162,14 @@
         targets: '#preloader-box path',
         strokeDashoffset: [anime.setDashoffset, 0],
         easing: 'linear',
-        duration: 2300,
+        duration: 1500,
         delay: function (el, i) { return i * 250 },
         direction: 'alternate',
         loop: false
       });
       setTimeout(() => {
         preloader.remove()
-      }, 5000);
+      }, 6000);
     });
   }
 
