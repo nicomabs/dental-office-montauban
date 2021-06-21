@@ -38,7 +38,7 @@ section {
   }
   h5 {
     margin-bottom: 0;
-    color: rgba($primary);
+    color: $default;
   }
 }
 
@@ -109,7 +109,6 @@ section {
     background: $white;
     box-shadow: 0 0 29px 0 rgba(68, 88, 144, 0.12);
     transition: all 0.3s ease-in-out;
-    border-radius: 8px;
     z-index: 1;
   }
 
@@ -525,6 +524,185 @@ section {
 # Departments
 --------------------------------------------------------------*/
 .departments {
+  /* slider*/
+
+  .cb-slideshow,
+  .cb-slideshow:after {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 0;
+    filter: saturate(0.5) opacity(0.6);
+    -webkit-filter: saturate(0.5) opacity(0.6);
+  }
+
+  .cb-slideshow li span {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    color: transparent;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: none;
+    opacity: 0;
+    z-index: 0;
+    -webkit-backface-visibility: hidden;
+    -webkit-animation: imageAnimation 36s linear infinite 0s;
+    -moz-animation: imageAnimation 36s linear infinite 0s;
+    -o-animation: imageAnimation 36s linear infinite 0s;
+    -ms-animation: imageAnimation 36s linear infinite 0s;
+    animation: imageAnimation 36s linear infinite 0s;
+  }
+
+  .cb-slideshow li:nth-child(1) span {
+    background-image: url(../img/photos/operation-4.jpg);
+  }
+  .cb-slideshow li:nth-child(2) span {
+    background-image: url(../img/photos/operation-3.jpg);
+    -webkit-animation-delay: 6s;
+    -moz-animation-delay: 6s;
+    -o-animation-delay: 6s;
+    -ms-animation-delay: 6s;
+    animation-delay: 6s;
+  }
+  .cb-slideshow li:nth-child(3) span {
+    background-image: url(../img/photos/imagerie.jpg);
+    -webkit-animation-delay: 12s;
+    -moz-animation-delay: 12s;
+    -o-animation-delay: 12s;
+    -ms-animation-delay: 12s;
+    animation-delay: 12s;
+  }
+  .cb-slideshow li:nth-child(4) span {
+    background-image: url(../img/photos/operation-1.jpg);
+    -webkit-animation-delay: 18s;
+    -moz-animation-delay: 18s;
+    -o-animation-delay: 18s;
+    -ms-animation-delay: 18s;
+    animation-delay: 18s;
+  }
+  .cb-slideshow li:nth-child(5) span {
+    background-image: url(../img/photos/operation-5.jpg);
+    -webkit-animation-delay: 24s;
+    -moz-animation-delay: 24s;
+    -o-animation-delay: 24s;
+    -ms-animation-delay: 24s;
+    animation-delay: 24s;
+  }
+  .cb-slideshow li:nth-child(6) span {
+    background-image: url(../img/photos/operation-2.jpg);
+    -webkit-animation-delay: 30s;
+    -moz-animation-delay: 30s;
+    -o-animation-delay: 30s;
+    -ms-animation-delay: 30s;
+    animation-delay: 30s;
+  }
+
+  /* Animation for the slideshow images */
+  @-webkit-keyframes imageAnimation {
+    0% {
+      opacity: 0;
+      -webkit-animation-timing-function: ease-in;
+    }
+    8% {
+      opacity: 1;
+      -webkit-animation-timing-function: ease-out;
+    }
+    17% {
+      opacity: 1;
+    }
+    25% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @-moz-keyframes imageAnimation {
+    0% {
+      opacity: 0;
+      -moz-animation-timing-function: ease-in;
+    }
+    8% {
+      opacity: 0.5;
+      -moz-animation-timing-function: ease-out;
+    }
+    17% {
+      opacity: 0.5;
+    }
+    25% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @-o-keyframes imageAnimation {
+    0% {
+      opacity: 0;
+      -o-animation-timing-function: ease-in;
+    }
+    8% {
+      opacity: 1;
+      -o-animation-timing-function: ease-out;
+    }
+    17% {
+      opacity: 1;
+    }
+    25% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @-ms-keyframes imageAnimation {
+    0% {
+      opacity: 0;
+      -ms-animation-timing-function: ease-in;
+    }
+    8% {
+      opacity: 1;
+      -ms-animation-timing-function: ease-out;
+    }
+    17% {
+      opacity: 1;
+    }
+    25% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes imageAnimation {
+    0% {
+      opacity: 0;
+      animation-timing-function: ease-in;
+    }
+    8% {
+      opacity: 1;
+      animation-timing-function: ease-out;
+    }
+    17% {
+      opacity: 1;
+    }
+    25% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  /* Show at least something when animations not supported */
+  .no-cssanimations .cb-slideshow li span {
+    opacity: 1;
+  }
   .nav-tabs {
     border: 0;
   }
@@ -587,7 +765,9 @@ section {
     }
 
     p {
-      color: lighten($default, 20);
+      color: lighten($secondary, 20);
+      z-index: 999999;
+      opacity: 1;
 
       &:last-child {
         margin-bottom: 0;
@@ -692,31 +872,29 @@ section {
     justify-content: space-around;
   }
 
+  .card-img-top {
+    width: 100%;
+    height: 30vw;
+    object-fit: cover;
+  }
+
   .member {
+    justify-content: center;
     margin-bottom: 20px;
     overflow: hidden;
     text-align: center;
-    border-radius: 4px;
     background: $white;
     box-shadow: 0px 2px 15px rgba($primary, 0.1);
-
-    .member-img {
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      background: cover;
-    }
 
     .social {
       position: absolute;
       left: 0;
       bottom: 0;
       right: 0;
-      height: 32.5em;
       opacity: 0;
       transition: ease-in-out 0.3s;
       background: rgba($white, 0.85);
-      display: flex;
+      display: none;
 
       ul {
         list-style: none;
@@ -726,21 +904,23 @@ section {
         font-size: medium;
         display: flex;
         flex-direction: column;
+        display: none;
       }
 
       li {
         transition: color 0.3s;
         color: $default;
-        margin-bottom: 1.5em;
+        display: none;
       }
     }
 
     .member-info {
-      padding: 25px 15px;
+      height: 30px;
+
       h4 {
         font-weight: 700;
         margin-bottom: 5px;
-        font-size: 18px;
+        font-size: 14px;
         color: $secondary;
       }
 
@@ -754,7 +934,6 @@ section {
       p {
         font-style: italic;
         font-size: 14px;
-        line-height: 26px;
         color: lighten($default, 20);
       }
     }
