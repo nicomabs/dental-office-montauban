@@ -165,16 +165,16 @@
         targets: '#preloader-box path',
         strokeDashoffset: [anime.setDashoffset, 0],
         easing: 'linear',
-        duration: 2300,
+        duration: 1100,
         delay: function(el, i) {
-          return i * 250
+          return i * 120
         },
         direction: 'alternate',
         loop: false
       });
       setTimeout(() => {
         preloader.remove()
-      }, 5000);
+      }, 3800);
     });
   }
 
@@ -194,8 +194,8 @@
       translateZ: 0,
       opacity: [0, 1],
       easing: "easeOutExpo",
-      duration: 1800,
-      delay: (el, i) => 500 + 30 * i
+      duration: 2100,
+      delay: (el, i) => 3600 + 25 * i
     }).add({
       targets: '.intro-fade-in',
       translateX: [0, -30],

@@ -398,20 +398,23 @@ h6 {
 }
 
 .header-overlay .intro-title {
-  display: block;
+  display: flex;
+  justify-content: center;
   position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 1000;
-  opacity: 0.99;
+  top: 41vh;
+  z-index: 10000;
+  opacity: 1;
   text-align: center;
 }
 
 .header-overlay .intro-title .intro-fade-in {
   color: #beac6c;
-  font-weight: 600;
-  font-size: 3em;
-  line-height: 1.8em;
+  border: solid 2.5px;
+  padding: 1em 0.2em;
+  margin: 0 2em;
+  font-weight: 500;
+  font-size: 46px;
+  text-transform: uppercase;
 }
 
 .header-overlay .scroll-down-wrapper {
@@ -568,6 +571,11 @@ section {
   margin-bottom: 0;
 }
 
+.section-title h5 {
+  margin-bottom: 0;
+  color: #173444;
+}
+
 /*--------------------------------------------------------------
 # Breadcrumbs
 --------------------------------------------------------------*/
@@ -638,7 +646,6 @@ section {
   background: #fff;
   box-shadow: 0 0 29px 0 rgba(68, 88, 144, 0.12);
   transition: all 0.3s ease-in-out;
-  border-radius: 8px;
   z-index: 1;
 }
 
@@ -778,7 +785,14 @@ section {
 /*--------------------------------------------------------------
 # About Us
 --------------------------------------------------------------*/
+.about .content {
+  padding-top: 1em;
+}
+
 .about .content h3 {
+  display: flex;
+  justify-content: center;
+  text-align: center;
   font-weight: 600;
   font-size: 26px;
 }
@@ -796,6 +810,10 @@ section {
   font-size: 20px;
   padding-right: 4px;
   color: #5a725c;
+}
+
+.about .content p {
+  margin: 3em 0;
 }
 
 .about .content p:last-child {
@@ -1046,6 +1064,121 @@ section {
 /*--------------------------------------------------------------
 # Departments
 --------------------------------------------------------------*/
+.departments {
+  /* slider*/
+  /* Animation for the slideshow images */
+  /* Show at least something when animations not supported */
+}
+
+.departments .cb-slideshow,
+.departments .cb-slideshow:after {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: 0;
+  filter: saturate(0.5) opacity(0.6);
+  -webkit-filter: saturate(0.5) opacity(0.6);
+}
+
+.departments .cb-slideshow li span {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: transparent;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: none;
+  opacity: 0;
+  z-index: 0;
+  -webkit-backface-visibility: hidden;
+  -webkit-animation: imageAnimation 36s linear infinite 0s;
+  animation: imageAnimation 36s linear infinite 0s;
+}
+
+.departments .cb-slideshow li:nth-child(1) span {
+  background-image: url(../img/photos/operation-4.jpg);
+}
+
+.departments .cb-slideshow li:nth-child(2) span {
+  background-image: url(../img/photos/operation-3.jpg);
+  -webkit-animation-delay: 6s;
+  animation-delay: 6s;
+}
+
+.departments .cb-slideshow li:nth-child(3) span {
+  background-image: url(../img/photos/imagerie.jpg);
+  -webkit-animation-delay: 12s;
+  animation-delay: 12s;
+}
+
+.departments .cb-slideshow li:nth-child(4) span {
+  background-image: url(../img/photos/operation-1.jpg);
+  -webkit-animation-delay: 18s;
+  animation-delay: 18s;
+}
+
+.departments .cb-slideshow li:nth-child(5) span {
+  background-image: url(../img/photos/operation-5.jpg);
+  -webkit-animation-delay: 24s;
+  animation-delay: 24s;
+}
+
+.departments .cb-slideshow li:nth-child(6) span {
+  background-image: url(../img/photos/operation-2.jpg);
+  -webkit-animation-delay: 30s;
+  animation-delay: 30s;
+}
+
+@-webkit-keyframes imageAnimation {
+  0% {
+    opacity: 0;
+    -webkit-animation-timing-function: ease-in;
+  }
+  8% {
+    opacity: 1;
+    -webkit-animation-timing-function: ease-out;
+  }
+  17% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes imageAnimation {
+  0% {
+    opacity: 0;
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  8% {
+    opacity: 1;
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  17% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.departments .no-cssanimations .cb-slideshow li span {
+  opacity: 1;
+}
+
 .departments .nav-tabs {
   border: 0;
 }
@@ -1110,7 +1243,9 @@ section {
 }
 
 .departments .tab-pane p {
-  color: #316e90;
+  color: #ddd4b3;
+  z-index: 999999;
+  opacity: 1;
 }
 
 .departments .tab-pane p:last-child {
@@ -1219,20 +1354,20 @@ section {
   justify-content: space-around;
 }
 
+.doctors .card-img-top {
+  width: 100%;
+  height: 30vw;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
 .doctors .member {
+  justify-content: center;
   margin-bottom: 20px;
   overflow: hidden;
   text-align: center;
-  border-radius: 4px;
   background: #fff;
   box-shadow: 0px 2px 15px rgba(90, 114, 92, 0.1);
-}
-
-.doctors .member .member-img {
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  background: cover;
 }
 
 .doctors .member .social {
@@ -1240,11 +1375,10 @@ section {
   left: 0;
   bottom: 0;
   right: 0;
-  height: 32.5em;
   opacity: 0;
   transition: ease-in-out 0.3s;
   background: rgba(255, 255, 255, 0.85);
-  display: flex;
+  display: none;
 }
 
 .doctors .member .social ul {
@@ -1255,22 +1389,23 @@ section {
   font-size: medium;
   display: flex;
   flex-direction: column;
+  display: none;
 }
 
 .doctors .member .social li {
   transition: color 0.3s;
   color: #173444;
-  margin-bottom: 1.5em;
+  display: none;
 }
 
 .doctors .member .member-info {
-  padding: 25px 15px;
+  height: 30px;
 }
 
 .doctors .member .member-info h4 {
   font-weight: 700;
   margin-bottom: 5px;
-  font-size: 18px;
+  font-size: 14px;
   color: #beac6c;
 }
 
@@ -1284,7 +1419,6 @@ section {
 .doctors .member .member-info p {
   font-style: italic;
   font-size: 14px;
-  line-height: 26px;
   color: #316e90;
 }
 
