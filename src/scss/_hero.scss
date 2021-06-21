@@ -53,19 +53,22 @@
   }
 
   .intro-title {
-    display: block;
+    display: flex;
+    justify-content: center;
     position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1000;
-    opacity: 0.99;
+    top: 41vh;
+    z-index: 10000;
+    opacity: 1;
     text-align: center;
 
     .intro-fade-in {
       color: $secondary;
-      font-weight: 600;
-      font-size: 3em;
-      line-height: 1.8em;
+      border: solid 2.5px;
+      padding: 1em 0.2em;
+      margin: 0 2em;
+      font-weight: 500;
+      font-size: 46px;
+      text-transform: uppercase;
     }
   }
 
