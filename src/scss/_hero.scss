@@ -25,8 +25,8 @@
   top: 0;
   left: 0;
   z-index: 600;
-  -webkit-filter: sepia(30%);
-  filter: sepia(30%);
+  -webkit-filter: contrast(150%) saturate(110%);
+  filter: contrast(150%) saturate(110%);
 
   &::before {
     content: '';
