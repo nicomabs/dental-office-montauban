@@ -332,34 +332,13 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Features
+# traitements
 --------------------------------------------------------------*/
-.features {
-  .icon-box {
-    h4 {
-      font-size: 20px;
-      font-weight: 700;
-      margin: 5px 0 10px 60px;
-    }
-
-    i {
-      font-size: 48px;
-      float: left;
-      color: $primary;
-    }
-
-    p {
-      font-size: 15px;
-      color: lighten($default, 25);
-      margin-left: 60px;
-    }
-  }
-
-  .image {
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 400px;
+.traitements {
+  .traitements-list {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
   }
 }
 
@@ -525,7 +504,7 @@ section {
 /*--------------------------------------------------------------
 # Orthodontie
 --------------------------------------------------------------*/
-.Orthodontie {
+.orthodontie {
   /* slider*/
   display: flex;
   align-items: center;
@@ -549,13 +528,11 @@ section {
     position: absolute;
     top: 0px;
     left: 0px;
-    color: transparent;
     background-size: cover;
     background-position: 50% 50%;
     background-repeat: none;
     opacity: 0.5;
     z-index: 0;
-    -webkit-backface-visibility: hidden;
     -webkit-animation: imageAnimation 36s linear infinite 0s;
     -moz-animation: imageAnimation 36s linear infinite 0s;
     -o-animation: imageAnimation 36s linear infinite 0s;
@@ -704,89 +681,8 @@ section {
     }
   }
 
-  /* Show at least something when animations not supported */
-  .no-cssanimations .cb-slideshow li span {
-    opacity: 1;
-  }
-  .nav-tabs {
-    border: 0;
-  }
-
-  .nav-link {
-    border: 0;
-    padding: 20px;
-    color: $secondary;
-    border-radius: 0;
-    border-left: 5px solid #fff;
-    cursor: pointer;
-
-    h4 {
-      font-size: 18px;
-      font-weight: 600;
-      transition: 0.3s;
-    }
-
-    p {
-      font-size: 14px;
-      margin-bottom: 0;
-    }
-
-    &:hover {
-      h4 {
-        color: $primary;
-      }
-    }
-
-    &.active {
-      background: lighten($primary, 48);
-      border-color: $primary;
-      h4 {
-        color: $primary;
-      }
-    }
-  }
-
-  .tab-pane.active {
-    animation: slide-down 0.5s ease-out;
-  }
-
-  .tab-pane {
-    img {
-      float: left;
-      max-width: 300px;
-      padding: 0 15px 15px 0;
-      @media (max-width: 768px) {
-        float: none;
-        padding: 0 0 15px 0;
-        max-width: 100%;
-      }
-    }
-
-    h3 {
-      font-size: 26px;
-      font-weight: 600;
-      margin-bottom: 20px;
-      color: $primary;
-    }
-
-    p {
-      color: lighten($secondary, 20);
-      z-index: 999999;
-      opacity: 1;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-  }
-
-  @keyframes slide-down {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
+  .main-text {
+    font-size: 18px;
   }
 }
 
@@ -876,41 +772,56 @@ section {
 # Gallery
 --------------------------------------------------------------*/
 .gallery {
-  overflow: hidden;
+  .wrapper {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
 
-  .swiper-pagination {
-    margin-top: 20px;
-    position: relative;
-
-    .swiper-pagination-bullet {
-      width: 12px;
-      height: 12px;
-      background-color: #fff;
-      opacity: 1;
-      border: 1px solid $primary;
+    .left {
+      right: 0;
     }
 
-    .swiper-pagination-bullet-active {
-      background-color: $primary;
+    .right {
+      right: 0;
+    }
+  }
+  .wrapper > * {
+    flex: 1 1 80px;
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+  }
+
+  /* Create four equal columns that sits next to each other */
+  .column {
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+  }
+
+  .column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+  }
+
+  /* Responsive layout - makes a two column-layout instead of four columns */
+  @media screen and (max-width: 800px) {
+    .column {
+      flex: 50%;
+      max-width: 50%;
     }
   }
 
-  .swiper-slide-active {
-    text-align: center;
-  }
-
-  @media (min-width: 992px) {
-    .swiper-wrapper {
-      padding: 40px 0;
-    }
-
-    .swiper-slide-active {
-      border: 6px solid $primary;
-      padding: 4px;
-      background: #fff;
-      z-index: 1;
-      transform: scale(1.2);
-      margin-top: 10px;
+  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .column {
+      flex: 100%;
+      max-width: 100%;
     }
   }
 }
