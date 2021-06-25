@@ -53,12 +53,12 @@ h6 {
 }
 
 #preloader-box .svg-box svg {
-  width: 50vmin;
-  height: 50vmin;
+  width: 60vmin;
+  height: 60vmin;
   /* set some maximum size (width and height need to match
        * aspect ratio, 1:1 in this case */
-  max-width: 350px;
-  max-height: 350px;
+  max-width: 500px;
+  max-height: 500px;
 }
 
 /*--------------------------------------------------------------
@@ -362,7 +362,7 @@ h6 {
   position: relative;
   max-width: 100vw;
   max-height: 100vh;
-  background-image: url("/src/assets/img/new/photos/salle_operation.jpg");
+  background-image: url("assets/img/photos/facade_cabinet.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   z-index: 0;
@@ -381,7 +381,7 @@ h6 {
   top: 0;
   left: 0;
   z-index: 600;
-  filter: sepia(30%);
+  filter: contrast(150%) saturate(110%);
 }
 
 .header-overlay::before {
@@ -397,26 +397,6 @@ h6 {
   background: radial-gradient(50% 50%, circle closest-corner, #e0e7e6 40, rgba(43, 42, 161, 0.6));
 }
 
-.header-overlay .intro-title {
-  display: flex;
-  justify-content: center;
-  position: relative;
-  top: 41vh;
-  z-index: 10000;
-  opacity: 1;
-  text-align: center;
-}
-
-.header-overlay .intro-title .intro-fade-in {
-  color: #beac6c;
-  border: solid 2.5px;
-  padding: 1em 0.2em;
-  margin: 0 2em;
-  font-weight: 500;
-  font-size: 46px;
-  text-transform: uppercase;
-}
-
 .header-overlay .scroll-down-wrapper {
   display: grid;
   place-items: center;
@@ -424,7 +404,6 @@ h6 {
 }
 
 .header-overlay .scroll-down-wrapper .scroll-down {
-  top: 86vh;
   height: 50px;
   width: 30px;
   border: 4px solid #beac6c;
@@ -785,6 +764,10 @@ section {
 /*--------------------------------------------------------------
 # About Us
 --------------------------------------------------------------*/
+.about {
+  margin: 1.5em 0;
+}
+
 .about .content {
   padding-top: 1em;
 }
@@ -871,31 +854,12 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Features
+# traitements
 --------------------------------------------------------------*/
-.features .icon-box h4 {
-  font-size: 20px;
-  font-weight: 700;
-  margin: 5px 0 10px 60px;
-}
-
-.features .icon-box i {
-  font-size: 48px;
-  float: left;
-  color: #5a725c;
-}
-
-.features .icon-box p {
-  font-size: 15px;
-  color: #377da3;
-  margin-left: 60px;
-}
-
-.features .image {
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  min-height: 400px;
+.traitements .traitements-list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 /*--------------------------------------------------------------
@@ -1062,16 +1026,18 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Departments
+# Orthodontie
 --------------------------------------------------------------*/
-.departments {
+.orthodontie {
   /* slider*/
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   /* Animation for the slideshow images */
-  /* Show at least something when animations not supported */
 }
 
-.departments .cb-slideshow,
-.departments .cb-slideshow:after {
+.orthodontie .cb-slideshow,
+.orthodontie .cb-slideshow:after {
   position: fixed;
   width: 100%;
   height: 100%;
@@ -1082,52 +1048,50 @@ section {
   -webkit-filter: saturate(0.5) opacity(0.6);
 }
 
-.departments .cb-slideshow li span {
+.orthodontie .cb-slideshow li span {
   width: 100%;
   height: 100%;
   position: absolute;
   top: 0px;
   left: 0px;
-  color: transparent;
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: none;
-  opacity: 0;
+  opacity: 0.5;
   z-index: 0;
-  -webkit-backface-visibility: hidden;
   -webkit-animation: imageAnimation 36s linear infinite 0s;
   animation: imageAnimation 36s linear infinite 0s;
 }
 
-.departments .cb-slideshow li:nth-child(1) span {
+.orthodontie .cb-slideshow li:nth-child(1) span {
   background-image: url(../img/photos/operation-4.jpg);
 }
 
-.departments .cb-slideshow li:nth-child(2) span {
+.orthodontie .cb-slideshow li:nth-child(2) span {
   background-image: url(../img/photos/operation-3.jpg);
   -webkit-animation-delay: 6s;
   animation-delay: 6s;
 }
 
-.departments .cb-slideshow li:nth-child(3) span {
+.orthodontie .cb-slideshow li:nth-child(3) span {
   background-image: url(../img/photos/imagerie.jpg);
   -webkit-animation-delay: 12s;
   animation-delay: 12s;
 }
 
-.departments .cb-slideshow li:nth-child(4) span {
+.orthodontie .cb-slideshow li:nth-child(4) span {
   background-image: url(../img/photos/operation-1.jpg);
   -webkit-animation-delay: 18s;
   animation-delay: 18s;
 }
 
-.departments .cb-slideshow li:nth-child(5) span {
+.orthodontie .cb-slideshow li:nth-child(5) span {
   background-image: url(../img/photos/operation-5.jpg);
   -webkit-animation-delay: 24s;
   animation-delay: 24s;
 }
 
-.departments .cb-slideshow li:nth-child(6) span {
+.orthodontie .cb-slideshow li:nth-child(6) span {
   background-image: url(../img/photos/operation-2.jpg);
   -webkit-animation-delay: 30s;
   animation-delay: 30s;
@@ -1175,176 +1139,8 @@ section {
   }
 }
 
-.departments .no-cssanimations .cb-slideshow li span {
-  opacity: 1;
-}
-
-.departments .nav-tabs {
-  border: 0;
-}
-
-.departments .nav-link {
-  border: 0;
-  padding: 20px;
-  color: #beac6c;
-  border-radius: 0;
-  border-left: 5px solid #fff;
-  cursor: pointer;
-}
-
-.departments .nav-link h4 {
+.orthodontie .main-text {
   font-size: 18px;
-  font-weight: 600;
-  transition: 0.3s;
-}
-
-.departments .nav-link p {
-  font-size: 14px;
-  margin-bottom: 0;
-}
-
-.departments .nav-link:hover h4 {
-  color: #5a725c;
-}
-
-.departments .nav-link.active {
-  background: #dde4dd;
-  border-color: #5a725c;
-}
-
-.departments .nav-link.active h4 {
-  color: #5a725c;
-}
-
-.departments .tab-pane.active {
-  -webkit-animation: slide-down 0.5s ease-out;
-  animation: slide-down 0.5s ease-out;
-}
-
-.departments .tab-pane img {
-  float: left;
-  max-width: 300px;
-  padding: 0 15px 15px 0;
-}
-
-@media (max-width: 768px) {
-  .departments .tab-pane img {
-    float: none;
-    padding: 0 0 15px 0;
-    max-width: 100%;
-  }
-}
-
-.departments .tab-pane h3 {
-  font-size: 26px;
-  font-weight: 600;
-  margin-bottom: 20px;
-  color: #5a725c;
-}
-
-.departments .tab-pane p {
-  color: #ddd4b3;
-  z-index: 999999;
-  opacity: 1;
-}
-
-.departments .tab-pane p:last-child {
-  margin-bottom: 0;
-}
-
-@-webkit-keyframes slide-down {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes slide-down {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-/*--------------------------------------------------------------
-# Testimonials
---------------------------------------------------------------*/
-.testimonials .testimonial-item {
-  box-sizing: content-box;
-  min-height: 320px;
-}
-
-.testimonials .testimonial-item .testimonial-img {
-  width: 90px;
-  border-radius: 50%;
-  margin: -40px 0 0 40px;
-  position: relative;
-  z-index: 2;
-  border: 6px solid #fff;
-}
-
-.testimonials .testimonial-item h3 {
-  font-size: 18px;
-  font-weight: bold;
-  margin: 10px 0 5px 45px;
-  color: #111;
-}
-
-.testimonials .testimonial-item h4 {
-  font-size: 14px;
-  color: #999;
-  margin: 0 0 0 45px;
-}
-
-.testimonials .testimonial-item .quote-icon-left,
-.testimonials .testimonial-item .quote-icon-right {
-  color: #aabcab;
-  font-size: 26px;
-}
-
-.testimonials .testimonial-item .quote-icon-left {
-  display: inline-block;
-  left: -5px;
-  position: relative;
-}
-
-.testimonials .testimonial-item .quote-icon-right {
-  display: inline-block;
-  right: -5px;
-  position: relative;
-  top: 10px;
-}
-
-.testimonials .testimonial-item p {
-  font-style: italic;
-  margin: 0 15px 0 15px;
-  padding: 20px 20px 60px 20px;
-  background: #d7e0d8;
-  position: relative;
-  border-radius: 6px;
-  position: relative;
-  z-index: 1;
-}
-
-.testimonials .swiper-pagination {
-  margin-top: 20px;
-  position: relative;
-}
-
-.testimonials .swiper-pagination .swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
-  background-color: #fff;
-  opacity: 1;
-  border: 1px solid #5a725c;
-}
-
-.testimonials .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: #5a725c;
 }
 
 /*--------------------------------------------------------------
@@ -1430,41 +1226,39 @@ section {
 # Gallery
 --------------------------------------------------------------*/
 .gallery {
-  overflow: hidden;
+  /* Create four equal columns that sits next to each other */
+  /* Responsive layout - makes a two column-layout instead of four columns */
+  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 }
 
-.gallery .swiper-pagination {
-  margin-top: 20px;
-  position: relative;
+.gallery .row {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.gallery .swiper-pagination .swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
-  background-color: #fff;
-  opacity: 1;
-  border: 1px solid #5a725c;
+.gallery .column {
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
 }
 
-.gallery .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: #5a725c;
+.gallery .column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
 }
 
-.gallery .swiper-slide-active {
-  text-align: center;
-}
-
-@media (min-width: 992px) {
-  .gallery .swiper-wrapper {
-    padding: 40px 0;
+@media screen and (max-width: 800px) {
+  .gallery .column {
+    flex: 50%;
+    max-width: 50%;
   }
-  .gallery .swiper-slide-active {
-    border: 6px solid #5a725c;
-    padding: 4px;
-    background: #fff;
-    z-index: 1;
-    transform: scale(1.2);
-    margin-top: 10px;
+}
+
+@media screen and (max-width: 600px) {
+  .gallery .column {
+    flex: 100%;
+    max-width: 100%;
   }
 }
 
