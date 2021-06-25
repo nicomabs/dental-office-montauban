@@ -51,12 +51,12 @@ h6 {
     justify-content: center;
 
     svg {
-      width: 50vmin;
-      height: 50vmin;
+      width: 60vmin;
+      height: 60vmin;
       /* set some maximum size (width and height need to match
        * aspect ratio, 1:1 in this case */
-      max-width: 350px;
-      max-height: 350px;
+      max-width: 500px;
+      max-height: 500px;
     }
   }
 }
