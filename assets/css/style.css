@@ -618,68 +618,134 @@ section {
 /*--------------------------------------------------------------
 # Featured Services
 --------------------------------------------------------------*/
-.featured-services .icon-box {
-  padding: 30px;
+#parcours {
+  background-color: #dde4dd;
+}
+
+#parcours .parcours__wrapper {
+  padding: 80px 0;
+}
+
+#parcours .parcours__single {
+  display: flex;
+  flex-direction: column;
+  width: 19%;
   position: relative;
-  overflow: hidden;
-  background: #fff;
-  box-shadow: 0 0 29px 0 rgba(68, 88, 144, 0.12);
-  transition: all 0.3s ease-in-out;
-  z-index: 1;
 }
 
-.featured-services .icon-box::before {
+#parcours .parcours__single svg {
+  margin: 0 auto;
+}
+
+#parcours .parcours__single:hover circle {
+  fill: #beac6c;
+}
+
+#parcours .parcours__single:hover path {
+  fill: #fff;
+  stroke: transparent;
+}
+
+#parcours .parcours__single:hover .parcours__single--title {
+  color: #beac6c;
+}
+
+#parcours .parcours__single--title {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: normal;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+  display: block;
+  padding: 20px 0;
+}
+
+#parcours .parcours__single p {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: normal;
+  color: #163140;
+  text-align: center;
+}
+
+#parcours .parcours__content {
+  display: flex;
+  justify-content: space-between;
+}
+
+#parcours .parcours__single:after {
   content: '';
+  background: #fff;
+  height: 2px;
   position: absolute;
-  background: #c6d2c7;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  top: 100%;
-  transition: all 0.3s;
-  z-index: -1;
+  left: 75%;
+  top: 18%;
+  right: -32%;
 }
 
-.featured-services .icon-box:hover::before {
-  background: #5a725c;
-  top: 0;
-  border-radius: 0px;
+#parcours .parcours__single:last-of-type:after {
+  display: none;
 }
 
-.featured-services .icon {
-  margin-bottom: 15px;
+@media screen and (min-width: 1441px) and (max-width: 1570px) {
+  #parcours .parcours__wrapper {
+    padding: 0 30px 80px 30px;
+  }
 }
 
-.featured-services .icon i {
-  font-size: 48px;
-  line-height: 1;
-  color: #5a725c;
-  transition: all 0.3s ease-in-out;
+@media screen and (max-width: 1440px) and (min-width: 1025px) {
+  #parcours .parcours__wrapper {
+    background-size: cover;
+  }
 }
 
-.featured-services .title {
-  font-weight: 700;
-  margin-bottom: 15px;
-  font-size: 18px;
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+  #parcours .parcours__wrapper {
+    background-size: cover;
+  }
 }
 
-.featured-services .title a {
-  color: #111;
-}
-
-.featured-services .description {
-  font-size: 15px;
-  line-height: 28px;
-  margin-bottom: 0;
-}
-
-.featured-services .icon-box:hover .title a,
-.featured-services .icon-box:hover .description {
-  color: #fff;
-}
-
-.featured-services .icon-box:hover .icon i {
-  color: #fff;
+@media screen and (max-width: 767px) {
+  #parcours .parcours__wrapper {
+    padding: 30px 20px;
+    background: none;
+  }
+  #parcours .parcours__single svg {
+    width: 100%;
+    max-width: 75px;
+  }
+  #parcours .parcours__single--desc {
+    width: 90%;
+    text-align: left;
+    padding-left: 25px;
+  }
+  #parcours .parcours__single--desc p,
+  #parcours .parcours__single--desc span {
+    text-align: left;
+  }
+  #parcours .section__title {
+    font-size: 24px;
+  }
+  #parcours .parcours__content {
+    flex-direction: column;
+  }
+  #parcours .parcours__single {
+    width: 100%;
+    padding: 10px 0;
+    flex-direction: row;
+    align-items: center;
+  }
+  #parcours .parcours__single--title {
+    padding: 10px 0;
+  }
+  #parcours .parcours__single:after {
+    display: none;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -1029,11 +1095,16 @@ section {
 # Orthodontie
 --------------------------------------------------------------*/
 .orthodontie {
+  background-color: #dde4dd;
   /* slider*/
   display: flex;
   align-items: center;
   flex-direction: column;
   /* Animation for the slideshow images */
+}
+
+.orthodontie .section-title {
+  margin: 30px 0;
 }
 
 .orthodontie .cb-slideshow,
@@ -1226,6 +1297,7 @@ section {
 # Gallery
 --------------------------------------------------------------*/
 .gallery {
+  background-color: #dde4dd;
   /* Create four equal columns that sits next to each other */
   /* Responsive layout - makes a two column-layout instead of four columns */
   /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
