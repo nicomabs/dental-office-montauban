@@ -1071,6 +1071,8 @@ section {
 .gallery {
   background-color: lighten($primary, 48);
 
+  padding: 20px 0;
+
   .row {
     display: flex;
     flex-wrap: wrap;
