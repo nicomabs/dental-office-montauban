@@ -244,7 +244,7 @@ section {
 
   h3 {
     font-size: 28px;
-    font-weight: 700;
+    font-weight: 200;
   }
 
   .cta-btn {
@@ -399,10 +399,238 @@ section {
 # traitements
 --------------------------------------------------------------*/
 .traitements {
-  .traitements-list {
+  .traitement__wrapper {
+    justify-content: space-between;
     display: flex;
-    justify-content: flex-start;
+  }
+
+  .traitement__desc {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
     align-items: center;
+    position: relative;
+  }
+  .traitement__single {
+    width: 31%;
+    overflow: hidden;
+  }
+
+  .traitement__single:nth-of-type(2) video {
+    -moz-transform: scale(1.4);
+    -webkit-transform: scale(1.4);
+    -o-transform: scale(1.4);
+    -ms-transform: scale(1.4);
+    transform: scale(1.4);
+  }
+
+  .traitement__single img {
+    width: 100%;
+    height: 315px;
+  }
+
+  .traitement__desc--title {
+    font-family: $font-primary;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: normal;
+    text-align: center;
+    text-transform: uppercase;
+    color: $default;
+    padding: 20px 0;
+  }
+
+  .traitement__desc--subtitle {
+    font-family: $font-primary;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 32px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    display: block;
+    background: $default;
+    width: 100%;
+    padding: 2px 0;
+  }
+
+  .traitement__desc p {
+    font-family: $font-tertary;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: normal;
+    text-align: left;
+    color: $default;
+    padding: 0 50px;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -ms-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+  }
+
+  .traitement__single:hover .traitement__desc {
+    background: $secondary;
+  }
+
+  .traitement__single:hover .traitement__desc--subtitle {
+    background: $secondary;
+    color: $secondary;
+  }
+
+  .traitement__single:hover .traitement__desc p {
+    color: #fff;
+  }
+
+  .traitement__single:hover .traitement__desc--title {
+    color: #fff;
+  }
+
+  .traitement__single:hover .traitement__desc:before {
+    background: $secondary;
+  }
+
+  .traitement__info {
+    min-height: 290px;
+  }
+
+  .traitement__info .first__traitement {
+    margin-bottom: 23px;
+  }
+
+  .traitement__single video {
+    max-height: 315px;
+    display: block;
+  }
+
+  .traitement__single--video {
+    display: flex;
+    justify-content: center;
+  }
+
+  @media screen and (max-width: 1440px) and (min-width: 1026px) {
+    .traitement__desc p {
+      padding: 0 20px;
+    }
+    .traitement__desc--title {
+      padding: 20px;
+    }
+    .traitement__single img {
+      width: 100%;
+      background: #f5f5f3;
+      height: 315px;
+    }
+
+    .traitement__single--video {
+      display: flex;
+      justify-content: center;
+      height: 315px;
+      overflow: hidden;
+    }
+    .traitement__desc--title {
+      min-height: 90px;
+    }
+    .traitement__info {
+      min-height: 370px;
+    }
+    .traitement__info .first__traitement {
+      margin-bottom: 0 !important;
+    }
+  }
+
+  @media screen and (max-width: 1200px) and (min-width: 1025px) {
+    .traitement__desc p {
+      padding: 0 20px;
+    }
+    .traitement__desc--title {
+      padding: 20px;
+    }
+    .traitement__single video {
+      display: block;
+      width: 100%;
+      height: 315px;
+      object-fit: cover;
+    }
+    .traitement__desc--title {
+      min-height: 90px;
+    }
+    .traitement__info {
+      min-height: 370px;
+    }
+    .traitement__info .first__traitement {
+      margin-bottom: 0 !important;
+    }
+  }
+  @media screen and (max-width: 1024px) and (min-width: 768px) {
+    #traitement {
+      padding: 30px 0;
+    }
+    .traitement__wrapper {
+      flex-direction: column;
+    }
+    .traitement__single {
+      width: 100%;
+      background: #fff;
+    }
+    .traitement__desc--title {
+      padding: 10px 0;
+    }
+    .traitement__desc p {
+      padding: 0 30px;
+      font-size: 16px;
+    }
+    .traitement__info {
+      min-height: auto;
+    }
+    .traitement__info .first__traitement {
+      margin-bottom: 0 !important;
+    }
+    .traitement__single img {
+      margin: 0 auto;
+      display: block;
+      width: auto;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    #traitement {
+      padding: 0;
+    }
+    .traitement__wrapper {
+      flex-direction: column;
+    }
+    .traitement__single {
+      width: 100%;
+      padding: 20px;
+    }
+    .traitement__single:nth-of-type(2) video {
+      transform: none;
+    }
+    .traitement__desc--title {
+      padding: 10px 0;
+    }
+    .traitement__desc p {
+      padding: 0 20px;
+      font-size: 16px;
+    }
+    .traitement__info {
+      min-height: auto;
+    }
+    .traitement__info .first__traitement {
+      margin-bottom: 0 !important;
+    }
+    .traitement__single--video {
+      overflow: hidden;
+    }
+    .traitement__single video {
+      width: auto;
+      transform: none;
+      height: auto;
+    }
   }
 }
 
@@ -853,12 +1081,19 @@ section {
     flex: 25%;
     max-width: 25%;
     padding: 0 4px;
-  }
 
-  .column img {
-    margin-top: 8px;
-    vertical-align: middle;
-    width: 100%;
+    img {
+      margin-top: 8px;
+      vertical-align: middle;
+      width: 100%;
+      transition: transform 2s, filter 1.5s ease-in-out;
+      transform-origin: center center;
+      filter: brightness(50%);
+      &:hover {
+        filter: brightness(100%);
+        transform: scale(1.3);
+      }
+    }
   }
 
   /* Responsive layout - makes a two column-layout instead of four columns */
