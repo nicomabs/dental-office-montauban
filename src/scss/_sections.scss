@@ -498,7 +498,7 @@ section {
     min-height: 290px;
   }
 
-  .traitement__info .first__traitement {
+  .first__traitement {
     margin-bottom: 23px;
   }
 
@@ -537,7 +537,7 @@ section {
     .traitement__info {
       min-height: 370px;
     }
-    .traitement__info .first__traitement {
+    .first__traitement {
       margin-bottom: 0 !important;
     }
   }
@@ -561,7 +561,7 @@ section {
     .traitement__info {
       min-height: 370px;
     }
-    .traitement__info .first__traitement {
+    .first__traitement {
       margin-bottom: 0 !important;
     }
   }
@@ -586,7 +586,7 @@ section {
     .traitement__info {
       min-height: auto;
     }
-    .traitement__info .first__traitement {
+    .first__traitement {
       margin-bottom: 0 !important;
     }
     .traitement__single img {
@@ -620,7 +620,7 @@ section {
     .traitement__info {
       min-height: auto;
     }
-    .traitement__info .first__traitement {
+    .first__traitement {
       margin-bottom: 0 !important;
     }
     .traitement__single--video {
@@ -1076,22 +1076,31 @@ section {
     flex-wrap: wrap;
   }
 
+  .second__row {
+    margin-top: 8px;
+  }
+
   /* Create four equal columns that sits next to each other */
   .column {
     flex: 25%;
     max-width: 25%;
     padding: 0 4px;
 
-    img {
-      margin-top: 8px;
-      vertical-align: middle;
-      width: 100%;
-      transition: transform 2s, filter 1.5s ease-in-out;
-      transform-origin: center center;
-      filter: brightness(50%);
-      &:hover {
-        filter: brightness(100%);
-        transform: scale(1.3);
+    .img-zoom-in {
+      max-width: 100%;
+      height: 100%;
+      overflow: hidden;
+
+      img {
+        vertical-align: middle;
+        width: 100%;
+        transition: transform 2s, filter 1.5s ease-in-out;
+        transform-origin: center center;
+        filter: brightness(70%);
+        &:hover {
+          filter: brightness(100%);
+          transform: scale(1.3);
+        }
       }
     }
   }
