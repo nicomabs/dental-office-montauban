@@ -760,7 +760,7 @@ section {
 
 .cta h3 {
   font-size: 28px;
-  font-weight: 700;
+  font-weight: 200;
 }
 
 .cta .cta-btn {
@@ -922,10 +922,232 @@ section {
 /*--------------------------------------------------------------
 # traitements
 --------------------------------------------------------------*/
-.traitements .traitements-list {
+.traitements .traitement__wrapper {
+  justify-content: space-between;
   display: flex;
-  justify-content: flex-start;
+}
+
+.traitements .traitement__desc {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
   align-items: center;
+  position: relative;
+}
+
+.traitements .traitement__single {
+  width: 31%;
+  overflow: hidden;
+}
+
+.traitements .traitement__single:nth-of-type(2) video {
+  transform: scale(1.4);
+}
+
+.traitements .traitement__single img {
+  width: 100%;
+  height: 315px;
+}
+
+.traitements .traitement__desc--title {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: normal;
+  text-align: center;
+  text-transform: uppercase;
+  color: #173444;
+  padding: 20px 0;
+}
+
+.traitements .traitement__desc--subtitle {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 32px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+  display: block;
+  background: #173444;
+  width: 100%;
+  padding: 2px 0;
+}
+
+.traitements .traitement__desc p {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: normal;
+  text-align: left;
+  color: #173444;
+  padding: 0 50px;
+  transition: all 0.3s linear;
+}
+
+.traitements .traitement__single:hover .traitement__desc {
+  background: #beac6c;
+}
+
+.traitements .traitement__single:hover .traitement__desc--subtitle {
+  background: #beac6c;
+  color: #beac6c;
+}
+
+.traitements .traitement__single:hover .traitement__desc p {
+  color: #fff;
+}
+
+.traitements .traitement__single:hover .traitement__desc--title {
+  color: #fff;
+}
+
+.traitements .traitement__single:hover .traitement__desc:before {
+  background: #beac6c;
+}
+
+.traitements .traitement__info {
+  min-height: 290px;
+}
+
+.traitements .traitement__info .first__traitement {
+  margin-bottom: 23px;
+}
+
+.traitements .traitement__single video {
+  max-height: 315px;
+  display: block;
+}
+
+.traitements .traitement__single--video {
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 1440px) and (min-width: 1026px) {
+  .traitements .traitement__desc p {
+    padding: 0 20px;
+  }
+  .traitements .traitement__desc--title {
+    padding: 20px;
+  }
+  .traitements .traitement__single img {
+    width: 100%;
+    background: #f5f5f3;
+    height: 315px;
+  }
+  .traitements .traitement__single--video {
+    display: flex;
+    justify-content: center;
+    height: 315px;
+    overflow: hidden;
+  }
+  .traitements .traitement__desc--title {
+    min-height: 90px;
+  }
+  .traitements .traitement__info {
+    min-height: 370px;
+  }
+  .traitements .traitement__info .first__traitement {
+    margin-bottom: 0 !important;
+  }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 1025px) {
+  .traitements .traitement__desc p {
+    padding: 0 20px;
+  }
+  .traitements .traitement__desc--title {
+    padding: 20px;
+  }
+  .traitements .traitement__single video {
+    display: block;
+    width: 100%;
+    height: 315px;
+    -o-object-fit: cover;
+    object-fit: cover;
+  }
+  .traitements .traitement__desc--title {
+    min-height: 90px;
+  }
+  .traitements .traitement__info {
+    min-height: 370px;
+  }
+  .traitements .traitement__info .first__traitement {
+    margin-bottom: 0 !important;
+  }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+  .traitements #traitement {
+    padding: 30px 0;
+  }
+  .traitements .traitement__wrapper {
+    flex-direction: column;
+  }
+  .traitements .traitement__single {
+    width: 100%;
+    background: #fff;
+  }
+  .traitements .traitement__desc--title {
+    padding: 10px 0;
+  }
+  .traitements .traitement__desc p {
+    padding: 0 30px;
+    font-size: 16px;
+  }
+  .traitements .traitement__info {
+    min-height: auto;
+  }
+  .traitements .traitement__info .first__traitement {
+    margin-bottom: 0 !important;
+  }
+  .traitements .traitement__single img {
+    margin: 0 auto;
+    display: block;
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .traitements #traitement {
+    padding: 0;
+  }
+  .traitements .traitement__wrapper {
+    flex-direction: column;
+  }
+  .traitements .traitement__single {
+    width: 100%;
+    padding: 20px;
+  }
+  .traitements .traitement__single:nth-of-type(2) video {
+    transform: none;
+  }
+  .traitements .traitement__desc--title {
+    padding: 10px 0;
+  }
+  .traitements .traitement__desc p {
+    padding: 0 20px;
+    font-size: 16px;
+  }
+  .traitements .traitement__info {
+    min-height: auto;
+  }
+  .traitements .traitement__info .first__traitement {
+    margin-bottom: 0 !important;
+  }
+  .traitements .traitement__single--video {
+    overflow: hidden;
+  }
+  .traitements .traitement__single video {
+    width: auto;
+    transform: none;
+    height: auto;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -1318,6 +1540,14 @@ section {
   margin-top: 8px;
   vertical-align: middle;
   width: 100%;
+  transition: transform 2s, filter 1.5s ease-in-out;
+  transform-origin: center center;
+  filter: brightness(50%);
+}
+
+.gallery .column img:hover {
+  filter: brightness(100%);
+  transform: scale(1.3);
 }
 
 @media screen and (max-width: 800px) {
