@@ -644,10 +644,15 @@ section {
     justify-content: space-around;
   }
 
+  .card {
+    border-radius: unset;
+  }
+
   .card-img-top {
     width: 100%;
     height: 30vw;
     object-fit: cover;
+    border-radius: unset;
   }
 
   .member {
