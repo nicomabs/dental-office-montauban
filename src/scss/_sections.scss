@@ -43,63 +43,7 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Breadcrumbs
---------------------------------------------------------------*/
-.breadcrumbs {
-  padding: 20px 0;
-  background-color: lighten($primary, 45);
-  min-height: 40px;
-  margin-top: 120px;
-
-  @media (max-width: 992px) {
-    margin-top: 70px;
-  }
-
-  h2 {
-    font-size: 24px;
-    font-weight: 300;
-    margin: 0;
-    @media (max-width: 992px) {
-      margin: 0 0 10px 0;
-    }
-  }
-
-  ol {
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    font-size: 14px;
-
-    li + li {
-      padding-left: 10px;
-    }
-
-    li + li::before {
-      display: inline-block;
-      padding-right: 10px;
-      color: #6c757d;
-      content: '/';
-    }
-  }
-
-  @media (max-width: 768px) {
-    .d-flex {
-      display: block !important;
-    }
-
-    ol {
-      display: block;
-      li {
-        display: inline-block;
-      }
-    }
-  }
-}
-
-/*--------------------------------------------------------------
-# Featured Services
+# Parcours de soins
 --------------------------------------------------------------*/
 #parcours {
   background-color: lighten($primary, 48);
@@ -635,175 +579,21 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Services
---------------------------------------------------------------*/
-.services {
-  .icon-box {
-    margin-bottom: 20px;
-    text-align: center;
-  }
-
-  .icon {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 80px;
-    height: 80px;
-    margin-bottom: 20px;
-    background: $white;
-    border-radius: 50%;
-    transition: 0.5s;
-    color: $primary;
-    overflow: hidden;
-    box-shadow: 0px 0 25px rgba(0, 0, 0, 0.15);
-
-    i {
-      font-size: 36px;
-      line-height: 0;
-    }
-  }
-
-  .icon-box:hover .icon {
-    box-shadow: 0px 0 25px rgba($primary, 0.3);
-  }
-
-  .title {
-    font-weight: 600;
-    margin-bottom: 15px;
-    font-size: 18px;
-    position: relative;
-    padding-bottom: 15px;
-    a {
-      color: $default;
-      transition: 0.3s;
-      &:hover {
-        color: $primary;
-      }
-    }
-
-    &::after {
-      content: '';
-      position: absolute;
-      display: block;
-      width: 50px;
-      height: 2px;
-      background: $primary;
-      bottom: 0;
-      left: calc(50% - 25px);
-    }
-  }
-
-  .description {
-    line-height: 24px;
-    font-size: 14px;
-  }
-}
-
-/*--------------------------------------------------------------
-# Appointments
---------------------------------------------------------------*/
-.appointment {
-  .php-email-form {
-    width: 100%;
-
-    .form-group {
-      padding-bottom: 8px;
-    }
-
-    .validate {
-      display: none;
-      color: red;
-      margin: 0 0 15px 0;
-      font-weight: 400;
-      font-size: 13px;
-    }
-
-    .error-message {
-      display: none;
-      color: #fff;
-      background: #ed3c0d;
-      text-align: left;
-      padding: 15px;
-      font-weight: 600;
-      & br + br {
-        margin-top: 25px;
-      }
-    }
-
-    .sent-message {
-      display: none;
-      color: #fff;
-      background: #18d26e;
-      text-align: center;
-      padding: 15px;
-      font-weight: 600;
-    }
-
-    .loading {
-      display: none;
-      background: #fff;
-      text-align: center;
-      padding: 15px;
-
-      &:before {
-        content: '';
-        display: inline-block;
-        border-radius: 50%;
-        width: 24px;
-        height: 24px;
-        margin: 0 10px -6px 0;
-        border: 3px solid #18d26e;
-        border-top-color: #eee;
-        animation: animate-loading 1s linear infinite;
-      }
-    }
-
-    input,
-    textarea,
-    select {
-      border-radius: 0;
-      box-shadow: none;
-      font-size: 14px;
-      padding: 10px !important;
-      &:focus {
-        border-color: $primary;
-      }
-    }
-
-    input,
-    select {
-      height: 44px;
-    }
-
-    textarea {
-      padding: 10px 12px;
-    }
-
-    button[type='submit'] {
-      background: $primary;
-      border: 0;
-      padding: 10px 35px;
-      color: #fff;
-      transition: 0.4s;
-      border-radius: 50px;
-      &:hover {
-        background: lighten($primary, 5);
-      }
-    }
-  }
-}
-
-/*--------------------------------------------------------------
 # Orthodontie
 --------------------------------------------------------------*/
 .orthodontie {
   background-color: white;
   /* slider*/
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   flex-direction: column;
   padding: 0;
   margin: 0;
+
+  .container-fluid {
+    height: 100vh;
+  }
 
   .row {
     height: 100%;
@@ -814,7 +604,7 @@ section {
     justify-content: center;
     align-items: center;
     background-image: url('/assets/img/photos/operation-4.jpg');
-    min-height: 100%;
+    height: 100%;
     color: #fff;
   }
   .right {
@@ -825,14 +615,6 @@ section {
     background-color: #fff;
     height: 100%;
   }
-  @media (max-width: 1200px) {
-    .left {
-      height: 50%;
-    }
-    .right {
-      height: 50%;
-    }
-  }
 
   .section-title {
     margin: 30px 0 0 0;
@@ -840,6 +622,18 @@ section {
 
   .main-text {
     font-size: 18px;
+  }
+  @media (max-width: 1200px) {
+    .container-fluid {
+      min-height: 100vh;
+    }
+
+    .left {
+      height: 50%;
+    }
+    .right {
+      height: 50%;
+    }
   }
 }
 
@@ -931,7 +725,7 @@ section {
 .gallery {
   background-color: $default;
 
-  padding: 20px 0;
+  padding: 15px 6px;
 
   .row {
     display: flex;
@@ -970,135 +764,41 @@ section {
   /* Responsive layout - makes a two column-layout instead of four columns */
   @media screen and (max-width: 800px) {
     .column {
+      display: flex;
       flex: 50%;
       max-width: 50%;
+      justify-content: center;
+
+      .img-zoom-in {
+        max-width: 90%;
+        height: 90%;
+      }
     }
   }
 
   /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 700px) {
     .column {
+      display: flex;
       flex: 100%;
+      justify-content: center;
       max-width: 100%;
+
+      .img-zoom-in {
+        max-width: 85%;
+        height: 85%;
+      }
     }
-  }
-}
-
-/*--------------------------------------------------------------
-# Pricing
---------------------------------------------------------------*/
-.pricing {
-  .box {
-    padding: 20px;
-    background: #fff;
-    text-align: center;
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.12);
-    border-radius: 4px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  h3 {
-    font-weight: 400;
-    margin: -20px -20px 20px -20px;
-    padding: 20px 15px;
-    font-size: 16px;
-    font-weight: 600;
-    color: lighten($default, 20);
-    background: #f8f8f8;
-  }
-
-  h4 {
-    font-size: 36px;
-    color: $primary;
-    font-weight: 600;
-    font-family: $font-secondary;
-    margin-bottom: 20px;
-
-    sup {
-      font-size: 20px;
-      top: -15px;
-      left: -3px;
-    }
-
-    span {
-      color: #bababa;
-      font-size: 16px;
-      font-weight: 300;
-    }
-  }
-
-  ul {
-    padding: 0;
-    list-style: none;
-    color: $default;
-    text-align: center;
-    line-height: 20px;
-    font-size: 14px;
-
-    li {
-      padding-bottom: 16px;
-    }
-
-    i {
-      color: $primary;
-      font-size: 18px;
-      padding-right: 4px;
-    }
-    .na {
-      color: #ccc;
-      text-decoration: line-through;
-    }
-  }
-
-  .btn-wrap {
-    margin: 20px -20px -20px -20px;
-    padding: 20px 15px;
-    background: #f8f8f8;
-    text-align: center;
-  }
-
-  .btn-buy {
-    background: $primary;
-    display: inline-block;
-    padding: 8px 35px 10px 35px;
-    border-radius: 4px;
-    color: #fff;
-    transition: none;
-    font-size: 14px;
-    font-weight: 400;
-    font-family: $font-primary;
-    font-weight: 600;
-    transition: 0.3s;
-    &:hover {
-      background: lighten($primary, 10);
-    }
-  }
-
-  .featured {
-    h3 {
-      color: $white;
-      background: $primary;
-    }
-  }
-
-  .advanced {
-    width: 200px;
-    position: absolute;
-    top: 18px;
-    right: -68px;
-    transform: rotate(45deg);
-    z-index: 1;
-    font-size: 14px;
-    padding: 1px 0 3px 0;
-    background: $primary;
-    color: $white;
   }
 }
 
 /*--------------------------------------------------------------
 # Frequently Asked Questioins
 --------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+
+
 .faq {
   padding: 60px 0;
 
@@ -1159,6 +859,7 @@ section {
     }
   }
 }
+--------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
 # Contact
