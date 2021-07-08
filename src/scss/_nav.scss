@@ -26,13 +26,13 @@
     justify-content: space-between;
     padding: 10px 15px 10px 15px;
     margin: 0 10px 0 10px;
-    font-family: $font-primary;
-    font-size: 18px;
+    font-family: $font-tertary;
+    font-size: 20px;
+    font-weight: 400;
     color: lighten($secondary, 5);
     white-space: nowrap;
     transition: 0.3s;
     text-transform: uppercase;
-    font-weight: 500;
   }
 
   a:after {
