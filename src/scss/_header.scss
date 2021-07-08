@@ -14,8 +14,7 @@ $animate: all 0.2s ease-in-out;
   .logo {
     margin-right: 60px;
     @media (max-width: 992px) {
-      width: 98px;
-      height: 102px;
+      display: none;
     }
   }
 

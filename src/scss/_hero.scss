@@ -23,9 +23,9 @@
   // mobile styles go here
   .hero {
     height: 100vh;
-    background-image: url('/assets/img/hero-mobile.png');
+    background-image: url('/assets/img/LOGOS/figma/hero-mobile.svg');
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
   }
 
   .hero__video {
@@ -36,8 +36,8 @@
 @media only screen and (min-width: 481px) and (max-width: 768px) {
   // tablet styles go here
   .hero {
-    height: fit-content;
-    background-image: url('/assets/img/hero-mobile.png');
+    height: 100vh;
+    background-image: url('/assets/img/LOGOS/figma/hero-mobile.svg');
     background-repeat: no-repeat;
     background-size: cover;
   }
