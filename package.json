@@ -1,11 +1,9 @@
 {
-  "name": "medicio",
-  "title": "Medicio",
+  "name": "dental-office-montauban",
+  "title": "MPM-Orthodontie",
   "version": "4.1.0",
-  "description": "Medicio - Bootstrap Website Template",
-  "author": "BootstrapMade.com",
-  "homepage": "https://bootstrapmade.com/medicio-free-bootstrap-theme/",
-  "license": "https://bootstrapmade.com/license/",
+  "description": "Site du Cabinet d'orthodontie de Montauban",
+  "author": "NB-Digital",
   "main": "gulpfile.js",
   "scripts": {
     "start": "node_modules/.bin/gulp start",
