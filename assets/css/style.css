@@ -386,17 +386,6 @@ h6 {
   aspect-ratio: 16/9;
 }
 
-@media only screen and (max-width: 480px) {
-  .hero {
-    height: 100vh;
-    background: url("/assets/img/LOGOS/figma/hero-mobile.svg") no-repeat center center;
-    background-size: cover;
-  }
-  .hero__video {
-    display: none;
-  }
-}
-
 @media only screen and (min-width: 481px) and (max-width: 768px) {
   .hero {
     display: flex;
