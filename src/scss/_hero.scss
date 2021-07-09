@@ -23,8 +23,11 @@
   // mobile styles go here
   .hero {
     height: 100vh;
-    background-image: url('/assets/img/LOGOS/figma/hero-mobile.svg');
-    background-repeat: no-repeat;
+    background: url('/assets/img/LOGOS/figma/hero-mobile.svg') no-repeat center
+      center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
   }
 
