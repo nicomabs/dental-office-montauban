@@ -701,9 +701,27 @@ section {
     }
   }
 
+  @media screen and (max-width: 991px) {
+    .card-img-top {
+      max-height: 230px;
+      min-height: 230px;
+      width: 100%;
+      object-position: 100% 0%;
+      object-fit: cover;
+      border-radius: unset;
+    }
+
+    .card-title {
+      font-size: 13px;
+    }
+    .card-text {
+      font-size: 11px;
+    }
+  }
+
   @media screen and (max-width: 575px) {
     .card-wrapper {
-      max-width: 150px;
+      max-width: 200px;
     }
 
     .card-title {
