@@ -119,7 +119,15 @@ h6 {
 }
 
 #header .logo {
-  margin-right: 60px;
+  margin: 0 20px;
+}
+
+@media (max-width: 1145px) {
+  #header .logo {
+    max-width: 102px;
+    max-height: 105px;
+    margin-left: 5px;
+  }
 }
 
 @media (max-width: 992px) {
@@ -160,7 +168,6 @@ h6 {
   align-items: center;
   justify-content: space-between;
   padding: 10px 15px 10px 15px;
-  margin: 0 10px 0 10px;
   font-family: "Poppins", sans-serif;
   font-size: 20px;
   font-weight: 400;
@@ -186,6 +193,12 @@ h6 {
 .navbar a:hover:after {
   width: 100%;
   left: 0;
+}
+
+@media (max-width: 1265px) {
+  .navbar a {
+    font-size: 18px;
+  }
 }
 
 .navbar .dropdown ul {
@@ -376,8 +389,7 @@ h6 {
 @media only screen and (max-width: 480px) {
   .hero {
     height: 100vh;
-    background-image: url("/assets/img/LOGOS/figma/hero-mobile.svg");
-    background-repeat: no-repeat;
+    background: url("/assets/img/LOGOS/figma/hero-mobile.svg") no-repeat center center;
     background-size: cover;
   }
   .hero__video {
@@ -387,10 +399,14 @@ h6 {
 
 @media only screen and (min-width: 481px) and (max-width: 768px) {
   .hero {
-    height: 100vh;
-    background-image: url("/assets/img/LOGOS/figma/hero-mobile.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    padding: 0;
+    margin: 0;
   }
   .hero__video {
     width: 100%;
@@ -684,27 +700,56 @@ section {
   font-size: 26px;
 }
 
-.about .content ul {
-  list-style: none;
-  padding: 0;
+.about .content .main-text {
+  margin: 3em 1.2em;
 }
 
-.about .content ul li {
-  padding-bottom: 10px;
-}
-
-.about .content ul i {
-  font-size: 20px;
-  padding-right: 4px;
-  color: #5a725c;
-}
-
-.about .content p {
-  margin: 3em 0;
-}
-
-.about .content p:last-child {
+.about .content .main-text:last-child {
   margin-bottom: 0;
+}
+
+@media screen and (max-width: 986px) {
+  .about .content {
+    padding-top: 0;
+  }
+  .about .content .main-text {
+    padding: 0 0 4em 0;
+  }
+}
+
+.about .content .inner-column {
+  position: relative;
+  padding: 40px 40px 0px 0px;
+}
+
+.about .content .inner-column:after {
+  position: absolute;
+  content: '';
+  right: 0px;
+  top: 0px;
+  left: 40px;
+  bottom: 100px;
+  z-index: -1;
+  border: 2px solid #beac6c;
+}
+
+.about .content .inner-column:after .image {
+  position: relative;
+}
+
+.about .content .inner-column:after .image:before {
+  position: absolute;
+  content: '';
+  left: -50px;
+  bottom: -50px;
+  width: 299px;
+  height: 299px;
+}
+
+.about .content .inner-column:after .image:before img {
+  position: relative;
+  width: 100%;
+  display: block;
 }
 
 /*--------------------------------------------------------------
@@ -798,21 +843,6 @@ section {
   text-transform: uppercase;
   color: #173444;
   padding: 20px 0;
-}
-
-.traitements .traitement__desc--subtitle {
-  font-family: "Roboto", sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 32px;
-  text-align: center;
-  text-transform: uppercase;
-  color: #fff;
-  display: block;
-  background: #173444;
-  width: 100%;
-  padding: 2px 0;
 }
 
 .traitements .traitement__desc p {
@@ -1054,11 +1084,16 @@ section {
   justify-content: space-around;
 }
 
+.doctors .card {
+  border-radius: unset;
+}
+
 .doctors .card-img-top {
   width: 100%;
   height: 30vw;
   -o-object-fit: cover;
   object-fit: cover;
+  border-radius: unset;
 }
 
 .doctors .member {
