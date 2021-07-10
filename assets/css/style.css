@@ -768,53 +768,36 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Counts
+# Invisal
 --------------------------------------------------------------*/
-.counts {
-  padding-bottom: 30px;
-}
-
-.counts .count-box {
-  box-shadow: -10px -5px 40px 0 rgba(0, 0, 0, 0.1);
-  padding: 30px;
-  width: 100%;
-}
-
-.counts .count-box i {
-  display: block;
-  font-size: 30px;
-  color: #5a725c;
-  float: left;
-}
-
-.counts .count-box span {
-  font-size: 42px;
-  line-height: 24px;
-  display: block;
-  font-weight: 700;
-  color: #beac6c;
-  margin-left: 50px;
-}
-
-.counts .count-box p {
-  padding: 30px 0 0 0;
+.invisal {
+  background-color: #dde4dd;
   margin: 0;
-  font-family: "Roboto", sans-serif;
-  font-size: 14px;
 }
 
-.counts .count-box a {
-  font-weight: 600;
-  display: block;
-  margin-top: 20px;
-  color: #d5caa1;
-  font-size: 15px;
-  font-family: "Raleway", sans-serif;
-  transition: ease-in-out 0.3s;
+.invisal h3 {
+  margin: 0.5em;
 }
 
-.counts .count-box a:hover {
-  color: #5a725c;
+.invisal a {
+  display: flex;
+  justify-content: center;
+}
+
+.invisal button {
+  background: #5a725c;
+  border: 0;
+  margin: 2em;
+  padding: 10px 30px;
+  max-width: 180px;
+  box-shadow: 0 0 15px rgba(214, 215, 216, 0.5);
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 4px;
+}
+
+.invisal button:hover {
+  background: #718f73;
 }
 
 /*--------------------------------------------------------------
@@ -1319,7 +1302,7 @@ section {
 .contact .info-box {
   color: #173444;
   text-align: center;
-  box-shadow: 0 0 20px rgba(214, 215, 216, 0.5);
+  box-shadow: 0 0 15px rgba(214, 215, 216, 0.5);
   padding: 20px 0 30px 0;
 }
 
@@ -1343,6 +1326,18 @@ section {
   line-height: 24px;
   font-size: 14px;
   margin-bottom: 0;
+}
+
+@media screen and (max-width: 992px) {
+  .contact .cab-infos {
+    margin-top: 1em;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contact .cab-adress {
+    margin-top: 1.5rem;
+  }
 }
 
 .contact .php-email-form {
