@@ -261,38 +261,34 @@ section {
   .content {
     padding-top: 1em;
 
-    h3 {
-      display: flex;
-      justify-content: center;
-      text-align: center;
-      font-weight: 600;
-      font-size: 26px;
-    }
+    .content-text {
+      h3 {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        font-weight: 600;
+        font-size: 26px;
+      }
 
-    .main-text {
-      margin: 3em 1.2em;
-    }
-    .main-text:last-child {
-      margin-bottom: 0;
-    }
-
-    @media screen and (max-width: 986px) {
-      padding-top: 0;
       .main-text {
-        padding: 0 0 4em 0;
+        margin: 3em 0;
+      }
+      .main-text:last-child {
+        margin-bottom: 0;
       }
     }
+
     .inner-column {
       position: relative;
-      padding: 40px 40px 0px 0px;
+      padding: 0px 0px 40px 40px;
     }
     .inner-column:after {
       position: absolute;
       content: '';
-      right: 0px;
-      top: 0px;
-      left: 40px;
-      bottom: 40px;
+      right: 40px;
+      top: 40px;
+      left: 0px;
+      bottom: 0px;
       z-index: -1;
       border: 2px solid $secondary;
 
@@ -313,6 +309,22 @@ section {
           width: 100%;
           display: block;
         }
+      }
+    }
+    @media screen and (max-width: 986px) {
+      padding-top: 0;
+
+      .content-text {
+        margin-top: 3em;
+      }
+      .main-text {
+        padding: 0 0 4em 0;
+      }
+      .inner-column {
+        padding: 10px 10px;
+      }
+      .inner-column:after {
+        display: none;
       }
     }
   }
@@ -882,7 +894,7 @@ section {
   .info-box {
     color: $default;
     text-align: center;
-    box-shadow: 0 0 20px rgba(214, 215, 216, 0.5);
+    box-shadow: 0 0 15px rgba(214, 215, 216, 0.5);
     padding: 20px 0 30px 0;
 
     i {
@@ -905,6 +917,18 @@ section {
       line-height: 24px;
       font-size: 14px;
       margin-bottom: 0;
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    .cab-infos {
+      margin-top: 1em;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .cab-adress {
+      margin-top: 1.5rem;
     }
   }
 
