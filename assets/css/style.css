@@ -386,6 +386,23 @@ h6 {
   aspect-ratio: 16/9;
 }
 
+@media only screen and (max-width: 480px) {
+  .hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    padding: 0;
+    margin: 0;
+  }
+  .hero__video {
+    width: 100%;
+    height: 100%;
+  }
+}
+
 @media only screen and (min-width: 481px) and (max-width: 768px) {
   .hero {
     display: flex;
@@ -681,7 +698,7 @@ section {
   padding-top: 1em;
 }
 
-.about .content h3 {
+.about .content .content-text h3 {
   display: flex;
   justify-content: center;
   text-align: center;
@@ -689,35 +706,26 @@ section {
   font-size: 26px;
 }
 
-.about .content .main-text {
-  margin: 3em 1.2em;
+.about .content .content-text .main-text {
+  margin: 3em 0;
 }
 
-.about .content .main-text:last-child {
+.about .content .content-text .main-text:last-child {
   margin-bottom: 0;
-}
-
-@media screen and (max-width: 986px) {
-  .about .content {
-    padding-top: 0;
-  }
-  .about .content .main-text {
-    padding: 0 0 4em 0;
-  }
 }
 
 .about .content .inner-column {
   position: relative;
-  padding: 40px 40px 0px 0px;
+  padding: 0px 0px 40px 40px;
 }
 
 .about .content .inner-column:after {
   position: absolute;
   content: '';
-  right: 0px;
-  top: 0px;
-  left: 40px;
-  bottom: 100px;
+  right: 40px;
+  top: 40px;
+  left: 0px;
+  bottom: 0px;
   z-index: -1;
   border: 2px solid #beac6c;
 }
@@ -739,6 +747,24 @@ section {
   position: relative;
   width: 100%;
   display: block;
+}
+
+@media screen and (max-width: 986px) {
+  .about .content {
+    padding-top: 0;
+  }
+  .about .content .content-text {
+    margin-top: 3em;
+  }
+  .about .content .main-text {
+    padding: 0 0 4em 0;
+  }
+  .about .content .inner-column {
+    padding: 10px 10px;
+  }
+  .about .content .inner-column:after {
+    display: none;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -1118,9 +1144,28 @@ section {
   color: #316e90;
 }
 
+@media screen and (max-width: 991px) {
+  .doctors .card-img-top {
+    max-height: 230px;
+    min-height: 230px;
+    width: 100%;
+    -o-object-position: 100% 0%;
+    object-position: 100% 0%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    border-radius: unset;
+  }
+  .doctors .card-title {
+    font-size: 13px;
+  }
+  .doctors .card-text {
+    font-size: 11px;
+  }
+}
+
 @media screen and (max-width: 575px) {
   .doctors .card-wrapper {
-    max-width: 150px;
+    max-width: 200px;
   }
   .doctors .card-title {
     font-size: 12px;
