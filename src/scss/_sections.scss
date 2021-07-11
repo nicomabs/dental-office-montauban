@@ -693,6 +693,38 @@ section {
     }
   }
 
+  .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: 0.5s ease;
+    background-color: lighten($default, 5%);
+  }
+
+  .card:hover .overlay {
+    opacity: 1;
+  }
+
+  ul {
+    list-style: none;
+    padding-right: 1rem;
+
+    .text-overlay {
+      color: $secondary;
+      padding-top: 1.2rem;
+      line-height: 1.2;
+    }
+
+    .card-title {
+      font-weight: 600;
+    }
+  }
+
   @media screen and (max-width: 991px) {
     .card-img-top {
       max-height: 230px;
@@ -708,6 +740,12 @@ section {
     }
     .card-text {
       font-size: 11px;
+    }
+  }
+
+  @media screen and (min-width: 576px) and (max-width: 990px) {
+    .text-overlay {
+      padding-top: 0.5rem !important;
     }
   }
 
