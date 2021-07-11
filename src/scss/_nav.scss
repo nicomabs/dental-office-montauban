@@ -50,10 +50,52 @@
     width: 100%;
     left: 0;
   }
+  .last {
+    color: $default;
+    border-radius: 4px;
+    background: $secondary;
+    padding: 3px 6px;
+  }
+  .last:hover {
+    color: $default;
+    background: lighten($secondary, 3%);
+    box-shadow: 2px 2px 5px rgba(0, 8, 3, 0.5);
+  }
+  .last:after {
+    transition: none;
+  }
+  .last:hover:after {
+    width: 0;
+  }
 
-  @media (max-width: 1265px) {
+  @media (max-width: 1365px) {
     a {
       font-size: 18px;
+    }
+
+    .logo {
+      max-width: 100px;
+      max-height: auto;
+    }
+  }
+  @media (max-width: 1272px) {
+    a {
+      font-size: 16px;
+    }
+
+    .logo {
+      max-width: 80px;
+      max-height: auto;
+    }
+  }
+  @media (max-width: 1130px) {
+    a {
+      font-size: 15px;
+    }
+
+    .logo {
+      max-width: 70px;
+      max-height: auto;
     }
   }
 
