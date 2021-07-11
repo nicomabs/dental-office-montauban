@@ -51,9 +51,6 @@
     ],
     "css_link": "assets/vendor/fontawesome-free/css/all.min.css"
   },
-  "php-email-form": {
-    "js_link": "assets/vendor/php-email-form/validate.js"
-  },
   "swiper": {
     "src": [
       "./node_modules/swiper/swiper-bundle.min.js",
