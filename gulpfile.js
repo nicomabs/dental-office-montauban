@@ -12,7 +12,6 @@ const sass = require('gulp-sass')(require('sass'));
 const inject = require('gulp-inject-string');
 const vendors = require('./vendors.json');
 const imagemin = require('gulp-imagemin');
-const cleanCSS = require('gulp-clean-css');
 
 /**
  * Set the destination/production directory
@@ -75,7 +74,7 @@ function compileHTML() {
 function compileSCSS() {
   return gulp.src('./src/scss/**/*.scss')
     .pipe(sass({
-      outputStyle: 'expanded',
+      outputStyle: 'compressed',
     }))
     .on("error", sass.logError)
     .pipe(autoprefixer({
@@ -84,9 +83,6 @@ function compileSCSS() {
     .pipe(gulp.dest(distDir + 'assets/css'))
     .pipe(browserSync.stream());
 }
-
-// Task: Minify CSS
-
 
 // Task: Compile JS
 function compileJS() {
