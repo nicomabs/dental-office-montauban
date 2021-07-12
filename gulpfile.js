@@ -12,6 +12,8 @@ const sass = require('gulp-sass')(require('sass'));
 const inject = require('gulp-inject-string');
 const vendors = require('./vendors.json');
 const imagemin = require('gulp-imagemin');
+const sitemap = require('gulp-sitemap');
+const save = require('gulp-save');
 
 /**
  * Set the destination/production directory
@@ -44,6 +46,7 @@ function minifyIMG() {
   return gulp.src('src/assets/img/**/*')
     .pipe(imagemin())
     .pipe(gulp.dest('dist/assets/img'))
+    .pipe(browserSync.stream());
 };
 
 
@@ -69,6 +72,18 @@ function compileHTML() {
     .pipe(gulp.dest(distDir))
     .pipe(browserSync.stream());
 }
+
+function generateSiteMap() {
+  return gulp.src('./src/html/*.html', {
+    read: false
+  })
+    .pipe(sitemap({
+      siteUrl: 'https://www.mpm-orthodontie.fr/'
+    }))
+    .pipe(gulp.dest(distDir))
+    .pipe(browserSync.stream());
+};
+
 
 // Task: Compile SCSS
 function compileSCSS() {
@@ -130,7 +145,7 @@ function watchFiles() {
 }
 
 // Export tasks
-const dist = gulp.series(clean, gulp.parallel(copyFiles, compileHTML, compileSCSS, compileJS, minifyIMG, copyVendors));
+const dist = gulp.series(clean, gulp.parallel(copyFiles, compileHTML, compileSCSS, compileJS, minifyIMG, generateSiteMap, copyVendors));
 
 exports.watch = gulp.series(dist, watchFiles);
 exports.start = gulp.series(dist, gulp.parallel(watchFiles, initBrowserSync));
