@@ -153,25 +153,58 @@
   });
 
   /**
+   * Anime preloader
+   */
+
+  const animeSvg = (svgElement) => {
+    var lineDrawing = anime({
+      targets: svgElement,
+      strokeDashoffset: [anime.setDashoffset, 0],
+      easing: 'linear',
+      duration: 1100,
+      delay: function (el, i) { return i * 120 },
+      direction: 'alternate',
+      loop: false
+    })
+  }
+
+  /**
+   * LoopLimit
+   */
+
+  const loopLimit = (vid) => {
+    let counter = 0;
+    if (counter < 2) {
+      vid.onended = function () {
+        alert("The video has ended");
+        counter++
+      }
+    } else {
+      vid.pause();
+    }
+  }
+  /**
    * Preloader
    */
-  let preloader = select('#preloader-box');
-  if (preloader) {
-    window.addEventListener('load', () => {
-      var lineDrawing = anime({
-        targets: '#preloader-box path',
-        strokeDashoffset: [anime.setDashoffset, 0],
-        easing: 'linear',
-        duration: 1100,
-        delay: function (el, i) { return i * 120 },
-        direction: 'alternate',
-        loop: false
-      });
-      setTimeout(() => {
-        preloader.remove()
-      }, 3800);
-    });
+  let preloaderEl = select('#preloader-box');
+  let svgElement = '#preloader-box path';
+  let heroVideo = select('.hero__video');
+  const preloader = () => {
+    if (preloaderEl) {
+      heroVideo.pause()
+      animeSvg(svgElement)
+    }
   }
+
+  window.addEventListener('load', () => {
+    preloader()
+    setTimeout(() => {
+      preloaderEl.remove()
+      heroVideo.play()
+    }, 3800)
+    loopLimit(heroVideo)
+  });
+
 
   /**
    * Animation on scroll
